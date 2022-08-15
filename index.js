@@ -1,37 +1,27 @@
-// Constantes
+const { axios, fs, colors, API_EPISODE, API_CHARACTER, API_LOCATION, JSON_FINAL } = require('./constantes/const')
 
-const axios = require("axios")
-const fs = require("fs")
-const colors = require('colors');
 
-const API_EPISODE = "https://rickandmortyapi.com/api/episode/?page="
-const API_CHARACTER = "https://rickandmortyapi.com/api/character/?page="
-const API_LOCATION = "https://rickandmortyapi.com/api/location/?page="
-
-const counter = {
-    location: 0,
-    episode: 0,
-    character: 0
-}
-
-const JSON_FINAL = []
-
-// Actividad Char Counter
+//      ---Actividad Char Counter---
 let obj = {
     exercise_name: "Char counter",
     time: 0,
     in_time: false,
     results: []
 }
-// Actividad Episode locations
+//      ---Actividad Episode locations---
 let obj2 = {
     exercise_name: "Episode locations",
     time: 0,
     in_time: false,
     results: []
 }
-
-
+//      ---Contador Char_Counter---
+const counter = {
+    location: 0,
+    episode: 0,
+    character: 0
+}
+//      ---fetchs Ejercicio Numero 1---
 
 const fetchLocations = async () => {
     let array = []
@@ -121,10 +111,7 @@ const fetchEpisode = async () => {
 
 
 
-
-
-
-
+// --- Ejecucion del primer Ejercicio ---
 const CharCounter = async () => {
     start = performance.now()
     await fetchLocations()
@@ -136,7 +123,7 @@ const CharCounter = async () => {
     let seg = Math.round(ms)
     obj.time = `${seg}s ${ms}ms`
     obj.in_time = seg <= 3 ? true : false
-    
+
 
 }
 
@@ -160,39 +147,40 @@ const BuscarPj = async (info, episodio, name) => {
 }
 
 
-const more2 = async (parem) => {
+const fetchEpisode_Location = async (parem) => {
 
     let json = await axios.get(parem)
 
-
-    var regex = /(\d+)/g;
-    json.data.results.map((el) => BuscarPj(el.characters.map(el => el.match(regex)[0]), el.episode, el.name)
-
-
-    )
+    let regex = /(\d+)/g;
+    json.data.results.map((el) =>
+        BuscarPj(el.characters.map(el => el.match(regex)[0]), el.episode, el.name))
 
     let next = json.data.info.next
-    next !== null ? await more2(next) : null
-
-
+    next !== null ? await fetchEpisode_Location(next) : null
 }
 
 const Episode_Location = async () => {
     start = performance.now()
-    await more2(API_EPISODE)
-    
-    end = performance.now()
+    await fetchEpisode_Location(API_EPISODE)
 
+     obj2.results.sort((a, b) => {
+        if (a.episodio < b.episodio) {
+            return -1;
+        }
+        if (a.episodio > b.episodio) {
+            return 1;
+        }
+        return 0;
+    })
+
+    end = performance.now()
 
     let ms = (end - start) / 1000
     let seg = Math.round(ms)
     obj2.time = `${seg}s ${ms}ms`
     obj2.in_time = seg <= 3 ? true : false
 
-
 }
-
-
 
 
 
@@ -203,8 +191,8 @@ async function Run() {
     JSON_FINAL.push(obj)
     JSON_FINAL.push(obj2)
 
+    
     const JsonArray = JSON.stringify(JSON_FINAL);
-
 
     let file = "Resultado.json"
     fs.writeFile("./RESULTADO/" + file, JsonArray, function (err) {
@@ -220,10 +208,11 @@ async function Run() {
 
 }
 
-
-
 Run()
 
-module.exports = {obj,obj2, CharCounter, Episode_Location, JSON_FINAL, Run}
+
+
+
+module.exports = { obj, obj2, CharCounter, Episode_Location, JSON_FINAL, Run }
 
 
