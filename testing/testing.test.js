@@ -1,4 +1,4 @@
-const {obj,obj2,CharCounter,Episode_Location} = require('../index')
+const {obj,obj2,CharCounter,Episode_Location, JSON_FINAL, Run} = require('../index')
 
 
 
@@ -12,6 +12,8 @@ test('La funcion Episode_Location se ejecuta en menos o igual a tres segundos', 
     await Episode_Location();
     expect(obj2.in_time).toBe(true);
   });
+
+
 
   
 

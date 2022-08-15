@@ -224,6 +224,6 @@ async function Run() {
 
 Run()
 
-module.exports = {obj,obj2, CharCounter, Episode_Location}
+module.exports = {obj,obj2, CharCounter, Episode_Location, JSON_FINAL, Run}
 
 
