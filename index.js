@@ -20,14 +20,14 @@ const JSON_FINAL = []
 let obj = {
     exercise_name: "Char counter",
     time: 0,
-    in_time: true,
+    in_time: false,
     results: []
 }
 // Actividad Episode locations
 let obj2 = {
     exercise_name: "Episode locations",
     time: 0,
-    in_time: true,
+    in_time: false,
     results: []
 }
 
