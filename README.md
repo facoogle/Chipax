@@ -16,9 +16,10 @@ Para este Proyecto usamos:
 ***
 Antes de comenzar instalemos. 
 ```
-$ git clone https://example.com
+$ git clone https://github.com/facoogle/Chipax
 $ npm install
-$ npm start
+$ node index (ejecutar app)
+$ npm test (ejecutar testing)
 ```
 
 
