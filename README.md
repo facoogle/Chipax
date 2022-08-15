@@ -264,13 +264,13 @@ como debemos devolver un .json, usamos la api "**fs"** de node, y lo guardamos e
 
 # Muchas gracias por haber llegado hasta aca, espero sea de su agrado. 
 ###Linkedin:
-https://www.linkedin.com/in/facundo-moreyra/
-###Proyectos: 
-https://pi-countries-facoogle.vercel.app/
-https://clima-app-morefacu.vercel.app/
+###https://www.linkedin.com/in/facundo-moreyra/
+###Proyectos:
+###https://pi-countries-facoogle.vercel.app/
+###https://clima-app-morefacu.vercel.app/
 
 ###GitHub: 
-https://github.com/facoogle
+###https://github.com/facoogle
 
 Saludos coordiales.
  Facundo Moreyra 15/08/2022
