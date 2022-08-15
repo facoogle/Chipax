@@ -1,0 +1,16 @@
+{
+  "name": "appchipax",
+  "version": "1.0.0",
+  "description": "Esta App esta desarrollada por Facundo Moreyra, postulando para la gran empresa Chipax !!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --forceExit"
+  },
+  "author": "Facundo Moreyra - Chipax",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "colors": "^1.4.0",
+    "jest": "^28.1.3"
+  }
+}
