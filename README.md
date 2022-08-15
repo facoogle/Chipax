@@ -16,7 +16,7 @@ Para este Proyecto usamos:
 ***
 Antes de comenzar instalemos. 
 ```
-$ git clone https://example.com
+$ git clone https://github.com/facoogle/Chipax.git
 $ npm install
 $ npm start
 ```
